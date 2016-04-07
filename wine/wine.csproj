@@ -78,6 +78,11 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="assets\scss\search.scss" />
+    <Content Include="assets\scss\list.scss" />
+    <Content Include="assets\scss\variables.scss" />
+    <Content Include="assets\scss\master.scss" />
+    <Content Include="assets\scss\detail.scss" />
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -825,8 +830,6 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\jquery-2.2.2.js" />
     <Content Include="Scripts\jquery-2.2.2.min.js" />
-    <Content Include="Scripts\q.js" />
-    <Content Include="Scripts\q.min.js" />
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
@@ -849,7 +852,6 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\q\Q.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
@@ -860,7 +862,7 @@
     <Content Include="assets\min\map\library.min.js.map" />
     <Content Include="assets\min\map\main.min.css.map" />
     <Content Include="assets\min\map\main.min.js.map" />
-    <Content Include="assets\scss\master.scss" />
+    <Content Include="assets\scss\navigation.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\img\" />
