@@ -1,4 +1,60 @@
-﻿<div ng-controller="SearchCtrl">
-    {{searchQuery}}
-    <input type="text" ng-model="updateSearchQuery(query)"/>
+﻿<div class="search" ng-controller="SearchCtrl as search">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <input class="search__field" type="text" ng-model="search.searchQuery" ng-change="search.updateProductSearch()" />
+        </div>
+    </div>
+
+    <div ng-show="search.showSearchResult">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 search__result">
+                You searched for: {{search.searchQuery}} ({{search.total}})
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="search__product" ng-repeat="product in search.products" ng-class="{'active': search.isProductOnList(product)}">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-2 search__product_img">
+                            <img src="{{product.Vineyard.ImageUrl}}" class="img-responsive" />
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 search__product_details">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <b>Product Name:</b>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    {{product.Name}}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <b>Vineyard:</b>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    {{product.Vineyard.Name}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3 search__product_price text-right">
+                            <b>{{product.PriceRetail}}$</b>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 search__product_addtolist" ng-click="search.addProductToList(product)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 search__product_loadmore" ng-click="search.loadMoreProducts()">
+                    Load more products
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

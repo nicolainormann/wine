@@ -1,2 +1,19 @@
-﻿body {
+﻿@import 'variables';
+
+body {
+    background-color: $grey;
+    color: $white;
+    margin-bottom: 50px;
+
+    a{
+        color: $white;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus{
+            color: $white;
+            text-decoration: none;
+        }
+    }
 }

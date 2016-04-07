@@ -1,1 +1,39 @@
-﻿<h1>Detail</h1>
+﻿<div class="detail">
+    <div class="col-md-12 col-sm-12 col-xs-12 detail__product">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <a href="/list">Back</a>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 detail__product_img">
+                <img src="{{detail.product.Vineyard.ImageUrl}}" class="img-responsive" />
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 detail__product_details">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <b>Product Name:</b>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                        {{detail.product.Name}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <b>Vineyard:</b>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                        {{detail.product.Vineyard.Name}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 detail__product_price text-right">
+                <b>{{detail.product.PriceRetail}}$</b>
+            </div>
+        </div>
+    </div>
+</div>

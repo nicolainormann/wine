@@ -1,0 +1,40 @@
+﻿@import 'variables';
+
+.list{
+    &__product{
+        background-color: $blue;
+        margin-bottom: 15px;
+        border-bottom: 1px solid $black;
+
+        &_img{
+            padding-left: 0;
+        }
+
+        &_price{
+            font-size:18px;
+            padding: 15px 15px 15px 0;
+        }
+
+        &_details{
+            padding: 15px 0;
+        }
+
+        &_addtolist{
+            cursor: pointer;
+            padding: 15px 0;
+
+            &::after{
+                content: "+";
+                float:right;
+                display: block;
+                margin-right: 30px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                font-size: 26px;
+                line-height: 30px;
+                background-color: $green;
+            }
+        }
+    }
+}

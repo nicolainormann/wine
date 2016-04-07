@@ -55,7 +55,8 @@ var library = {
         design + '/Scripts/angular.js',
         design + '/Scripts/angular-ui-router.js',
         design + '/Scripts/jquery-2.2.2.js',
-        design + '/Scripts/bootstrap.js'
+        design + '/Scripts/bootstrap.js',
+        design + '/Scripts/q.js'
     ]
 };
 
