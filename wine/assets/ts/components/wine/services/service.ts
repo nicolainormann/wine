@@ -28,4 +28,25 @@ angular.module("wine").service("service", function () {
 
         return product.pop();
     }
+
+    this.filterFromJson = (json) => {
+        var filter = {};
+        var appellation = [];
+        var vineyard = [];
+
+        json.forEach((item) => {
+            if (appellation.indexOf(item.Appellation.Name) < 0) {
+                appellation.push(item.Appellation.Name); 
+            }
+
+            if (vineyard.indexOf(item.Vineyard.Name) < 0) {
+                vineyard.push(item.Vineyard.Name);
+            }
+        });
+
+        filter["Appellation"] = appellation;
+        filter["Vineyard"] = vineyard;
+
+        return filter;
+    }
 });

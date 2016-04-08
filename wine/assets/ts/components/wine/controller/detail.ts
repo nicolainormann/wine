@@ -5,5 +5,4 @@
 angular.module("wine")
     .controller("DetailCtrl", function (details) {
         this.product = details;
-        console.log(this.product);
     }); 

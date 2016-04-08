@@ -17,6 +17,58 @@
         color: $black;
     }
 
+    &__filter{
+        color: $black;
+        margin-bottom: 15px;
+
+        &_header{
+            text-align: center;
+            text-transform: uppercase;
+            background-color: $green;
+            color: $white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        &_value{
+            background-color: $white;
+            padding: 5px;
+            border-bottom: 1px solid $black;
+            cursor: pointer;
+
+            &.active{
+                background-color: $blue;
+                color: $white;
+            }
+        }
+    }
+
+    &__sort{
+        color: $black;
+        margin-bottom: 15px;
+
+        &_header{
+            text-align: center;
+            text-transform: uppercase;
+            background-color: $green;
+            color: $white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        &_value{
+            background-color: $white;
+            padding: 5px;
+            border-bottom: 1px solid $black;
+            cursor: pointer;
+
+            &.active{
+                background-color: $blue;
+                color: $white;
+            }
+        }
+    }
+
     &__product{
         background-color: $blue;
         margin-bottom: 15px;

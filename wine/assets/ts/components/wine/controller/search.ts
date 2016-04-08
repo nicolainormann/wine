@@ -10,27 +10,43 @@ angular.module("wine")
         this.products;
         this.list = service.list;
         this.total;
-        this.timeout;
+        this.filter;
         this.showSearchResult = false;
         this.offset = 10;
 
+        this.filterOptions = {
+            Appellation: {
+                Name: ""
+            },
+            Vineyard: {
+                Name: ""
+            }
+        }
+
+        this.sortOptions = {
+            options: {
+                Name: "Name",
+                Vineyard: "Vineyard.Name",
+                Appellation: "Appellation.Name",
+                Price: "PriceRetail"
+            },
+            reverse: false,
+            currentSort: "Name"
+        }
+
         this.updateProductSearch = () => {
-            clearTimeout(this.timeout);
-
-            this.timeout = setTimeout(() => {
-                service.get(this.service + "?search=" + this.searchQuery + "&apikey=" + this.apiKey, $http, $q, 'json')
-                    .then((data) => {
-                        this.products = [];
-                        var listData = data[Object.keys(data)[1]].List;
-                        listData.forEach((item) => {
-                            this.products.push(item);
-                        });
-                        
-                        this.total = data[Object.keys(data)[1]].Total;
-
-                        this.showSearchResult = true;
+            service.get(this.service + "?search=" + this.searchQuery + "&apikey=" + this.apiKey, $http, $q, 'json')
+                .then((data) => {
+                    this.products = [];
+                    var listData = data[Object.keys(data)[1]].List;
+                    listData.forEach((item) => {
+                        this.products.push(item);
                     });
-            }, 250);
+                        
+                    this.total = data[Object.keys(data)[1]].Total;
+                    this.filter = service.filterFromJson(this.products);
+                    this.showSearchResult = true;
+                });
         }
 
         this.addProductToList = (product) => {
@@ -53,8 +69,37 @@ angular.module("wine")
                     listData.forEach((item) => {
                         this.products.push(item);
                     });
-
+                    this.filter = service.filterFromJson(this.products);
                     this.offset += 10;
                 });
+        }
+
+        this.setFilter = (key, value) => {
+            if (this.filterOptions[key].Name == value) {
+                this.filterOptions[key].Name = '';
+            }
+            else {
+                this.filterOptions[key].Name = value;
+            }
+        }
+
+        this.isFilterActive = (key, value) => {
+            return this.filterOptions[key].Name == value;
+        }
+
+        this.setSort = (value) => {
+            this.sortOptions.currentSort = value;
+        }
+
+        this.isSortActive = (value) => {
+            return this.sortOptions.currentSort == value;
+        }
+
+        this.setSortReverse = (value) => {
+            this.sortOptions.reverse = value;
+        }
+
+        this.isSortReverseActive = (value) => {
+
         }
     });

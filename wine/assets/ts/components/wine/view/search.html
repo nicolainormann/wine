@@ -1,7 +1,7 @@
 ﻿<div class="search" ng-controller="SearchCtrl as search">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <input class="search__field" type="text" ng-model="search.searchQuery" ng-change="search.updateProductSearch()" />
+            <input class="search__field" type="text" ng-model="search.searchQuery" ng-change="search.updateProductSearch()" ng-model-options="{ debounce: 250 }" />
         </div>
     </div>
 
@@ -13,8 +13,45 @@
         </div>
 
         <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 search__sort">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="search__sort_header">Sort by</div>
+
+                        <div ng-repeat="(key, value) in search.sortOptions.options">
+                            <div class="search__sort_value" ng-click="search.setSort(value)" ng-class="{'active': search.isSortActive(value)}">{{key}}</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="search__sort_header">Sort order</div>
+
+                        <div class="search__sort_value" ng-click="search.setSortReverse(false)">Descending</div>
+                        <div class="search__sort_value" ng-click="search.setSortReverse(true)">Ascending</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 search__filter">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="(key, array) in search.filter">
+                        <div class="search__filter_header" ng-click="search.setFilter(key, '')">{{key}}</div>
+
+                        <div ng-repeat="value in array | orderBy: value">
+                            <div class="search__filter_value" ng-click="search.setFilter(key, value)" ng-class="{'active': search.isFilterActive(key, value)}">
+                                {{value}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="search__product" ng-repeat="product in search.products" ng-class="{'active': search.isProductOnList(product)}">
+                <div class="search__product" ng-repeat="product in search.products | filter: search.filterOptions | orderBy: search.sortOptions.currentSort" ng-class="{'active': search.isProductOnList(product)}">
                     <div class="row">
                         <div class="col-md-2 col-sm-2 col-xs-2 search__product_img">
                             <img src="{{product.Vineyard.ImageUrl}}" class="img-responsive" />
@@ -38,6 +75,16 @@
 
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     {{product.Vineyard.Name}}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <b>Appellation:</b>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    {{product.Appellation.Name}}
                                 </div>
                             </div>
                         </div>
