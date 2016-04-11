@@ -98,8 +98,4 @@ angular.module("wine")
         this.setSortReverse = (value) => {
             this.sortOptions.reverse = value;
         }
-
-        this.isSortReverseActive = (value) => {
-
-        }
     });

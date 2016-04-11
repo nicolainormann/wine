@@ -26,8 +26,8 @@
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="search__sort_header">Sort order</div>
 
-                        <div class="search__sort_value" ng-click="search.setSortReverse(false)">Descending</div>
-                        <div class="search__sort_value" ng-click="search.setSortReverse(true)">Ascending</div>
+                        <div class="search__sort_value" ng-click="search.setSortReverse(false)" ng-class="{'active': !search.sortOptions.reverse}">Descending</div>
+                        <div class="search__sort_value" ng-click="search.setSortReverse(true)" ng-class="{'active': search.sortOptions.reverse}">Ascending</div>
                     </div>
                 </div>
             </div>
@@ -51,53 +51,8 @@
 
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="search__product" ng-repeat="product in search.products | filter: search.filterOptions | orderBy: search.sortOptions.currentSort" ng-class="{'active': search.isProductOnList(product)}">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-2 col-xs-2 search__product_img">
-                            <img src="{{product.Vineyard.ImageUrl}}" class="img-responsive" />
-                        </div>
 
-                        <div class="col-md-6 col-sm-6 col-xs-6 search__product_details">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <b>Product Name:</b>
-                                </div>
-
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                    {{product.Name}}
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <b>Vineyard:</b>
-                                </div>
-
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                    {{product.Vineyard.Name}}
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <b>Appellation:</b>
-                                </div>
-
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                    {{product.Appellation.Name}}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 search__product_price text-right">
-                            <b>{{product.PriceRetail}}$</b>
-                        </div>
-
-                        <div class="col-md-1 col-sm-1 col-xs-1 search__product_addtolist" ng-click="search.addProductToList(product)">
-                        </div>
-                    </div>
-                </div>
-
+                <product ng-repeat="product in search.products | filter: search.filterOptions | orderBy: search.sortOptions.currentSort : search.sortOptions.reverse track by product.Id" product="product" search="search"></product>
                 <div class="col-md-12 col-sm-12 col-xs-12 search__product_loadmore" ng-click="search.loadMoreProducts()">
                     Load more products
                 </div>

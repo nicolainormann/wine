@@ -835,6 +835,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="assets\ts\app.config.ts" />
     <TypeScriptCompile Include="assets\ts\app.ts" />
+    <TypeScriptCompile Include="assets\ts\components\wine\components\product.ts" />
     <TypeScriptCompile Include="assets\ts\components\wine\controller\detail.ts" />
     <TypeScriptCompile Include="assets\ts\components\wine\controller\edit.ts" />
     <TypeScriptCompile Include="assets\ts\components\wine\controller\list.ts" />
