@@ -1,9 +1,9 @@
-﻿/// <reference path="../../scripts/typings/bootstrap/bootstrap.d.ts" />
-/// <reference path="../../scripts/typings/angular-ui-router/angular-ui-router.d.ts" />
-/// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
+﻿/// <reference path="../../../scripts/typings/angular-ui-router/angular-ui-router.d.ts" />
+/// <reference path="../../../scripts/typings/bootstrap/bootstrap.d.ts" />
+/// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 
-namespace WineApp {
-    export function WineConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+namespace App {
+    export function Config($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise("/");
 
         $locationProvider.html5Mode(true);

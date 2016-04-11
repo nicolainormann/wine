@@ -23,10 +23,7 @@
     <Content Include="assets\min\library.min.js" />
     <Content Include="assets\min\main.min.css" />
     <Content Include="assets\min\main.min.js" />
-    <Content Include="assets\ts\components\wine\view\detail.html" />
-    <Content Include="assets\ts\components\wine\view\edit.html" />
-    <Content Include="assets\ts\components\wine\view\list.html" />
-    <Content Include="assets\ts\components\wine\view\search.html" />
+    <Content Include="assets\ts\components\navigation\navigation.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -83,6 +80,7 @@
     <Content Include="assets\scss\variables.scss" />
     <Content Include="assets\scss\master.scss" />
     <Content Include="assets\scss\detail.scss" />
+    <Content Include="assets\ts\components\json\navigation.json" />
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -833,15 +831,10 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="assets\ts\app.config.ts" />
-    <TypeScriptCompile Include="assets\ts\app.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\components\product.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\controller\detail.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\controller\edit.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\controller\list.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\controller\search.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\services\service.ts" />
-    <TypeScriptCompile Include="assets\ts\components\wine\wine.module.ts" />
+    <TypeScriptCompile Include="assets\ts\components\app.config.ts" />
+    <TypeScriptCompile Include="assets\ts\components\app.ts" />
+    <TypeScriptCompile Include="assets\ts\components\navigation\navigation.ts" />
+    <TypeScriptCompile Include="assets\ts\components\services\wine.service.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
@@ -867,7 +860,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\img\" />
-    <Folder Include="assets\ts\components\navigation\" />
+    <Folder Include="assets\ts\components\filter\" />
+    <Folder Include="assets\ts\components\productlist\" />
+    <Folder Include="assets\ts\components\product\" />
+    <Folder Include="assets\ts\components\search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-2.2.2.min.map" />

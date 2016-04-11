@@ -1,0 +1,12 @@
+﻿{
+    "navigation": [ 
+        {
+            "name": "Search",
+            "url": "/"
+        },
+        {
+            "name": "Show list",
+            "url": "/list"
+        }
+    ]
+}
