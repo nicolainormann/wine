@@ -36,7 +36,8 @@ catch(error){
 var watchSync = [
     design + '/**/*.html',
     design + '/**/*.min.css',
-    design + '/**/*.min.js'
+    design + '/**/*.min.js',
+    design + '/**/*.json'
 ];
 
 var watchSass = [

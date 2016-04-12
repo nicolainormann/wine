@@ -80,7 +80,7 @@
     <Content Include="assets\scss\variables.scss" />
     <Content Include="assets\scss\master.scss" />
     <Content Include="assets\scss\detail.scss" />
-    <Content Include="assets\ts\components\json\navigation.json" />
+    <Content Include="assets\ts\components\json\data.json" />
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

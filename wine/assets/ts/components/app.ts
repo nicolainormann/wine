@@ -5,6 +5,6 @@
 namespace App {
     angular.module('app', [
         "ui.router"
-    ])        
-   .config(App.Config)
+    ])
+        .config(App.Config)
 }

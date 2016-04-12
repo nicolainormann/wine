@@ -3,14 +3,18 @@
 /// <reference path="../../../../scripts/typings/angularjs/angular.d.ts" />
 
 namespace App {
+    class NavigationController {
+        constructor(WineService) {
+        }
+    }
+
     class Navigation implements ng.IComponentOptions{
         public controller: any;
-        public templateUrl: string = "/assets/ts/components/navigation/navigation.html";
+        public templateUrl: string;
 
         constructor() {
-            this.controller = function () {
-                console.log("asd");
-            }
+            this.controller = NavigationController;
+            this.templateUrl = "/assets/ts/components/navigation/navigation.html";
         }
     }
 
